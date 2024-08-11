@@ -28,10 +28,12 @@ model_urls=(
 target_dir=".assets/models"
 mkdir -p "$target_dir"
 
+
 # 遍历 URL 数组并下载每个模型文件到目标目录
 for url in "${model_urls[@]}"; do
     echo "Downloading $url"
-    curl -LO --output-dir "$target_dir" "$url"
+    filename=$(basename "$url")
+    curl -L "$url" -o "$target_dir/$filename"
 done
 
 echo "All models downloaded successfully to $target_dir."
