@@ -66,6 +66,7 @@ sudo apt-get update
 
 ```bash
 apt install ffmpeg
+conda install conda-forge::ffmpeg
 ```
 
 ## 8. 安装 CUDA 相关包
